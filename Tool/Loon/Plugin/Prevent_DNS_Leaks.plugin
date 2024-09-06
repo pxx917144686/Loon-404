@@ -6,8 +6,8 @@
 #!system = 
 #!system_version = 
 #!loon_version = 3.2.1(745)
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/Other_icon/120px/Prevent_DNS_Leaks.png
+#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/Prevent_DNS_Leaks.png
 #!date = 2024-01-11 21:38:24
 
 # 你猜为什么会有这个插件呢？

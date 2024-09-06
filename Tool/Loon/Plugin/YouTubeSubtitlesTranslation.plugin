@@ -6,8 +6,8 @@
 #!system = 
 #!system_version = 15
 #!loon_version = 3.2.1(745)
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/YouTube.png
+#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YouTube.png
 #!select =  自动显示翻译字幕, 是, 否
 #!select = 仅输出字幕译文, 是, 否
 #!select = 字幕译文的位置, 译文位于原文之上, 译文位于原文之下
@@ -15,19 +15,19 @@
 
 [Script]
 # YouTube字幕翻译
-http-request https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, tag = JSON·YouTube播放器请求, argument = 
-http-response ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_response.js, requires-body = true, tag = JSON·YouTube播放器响应, argument = 
-http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube播放器请求, argument = 
-http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_response.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube播放器响应, argument = 
-http-request ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = false, tag = YouTube定时文本请求, argument = 
-http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=(Official|External) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Composite_Subtitles_response.js, requires-body = true, tag = YouTube合成定时文本响应, argument = 
-http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=Translate script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js, requires-body = true, tag = YouTube翻译定时文本响应, argument = 
+http-request https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, tag = JSON·YouTube播放器请求, argument = 
+http-response ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_response.js, requires-body = true, tag = JSON·YouTube播放器响应, argument = 
+http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube播放器请求, argument = 
+http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_response.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube播放器响应, argument = 
+http-request ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = false, tag = YouTube定时文本请求, argument = 
+http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=(Official|External) script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Composite_Subtitles_response.js, requires-body = true, tag = YouTube合成定时文本响应, argument = 
+http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=Translate script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js, requires-body = true, tag = YouTube翻译定时文本响应, argument = 
 
 # YouTube Music字幕翻译
-http-request ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, tag = JSON·YouTube Music浏览请求, argument = 
-http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube Music浏览请求, argument = 
-http-response ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js, requires-body = true, tag = JSON·YouTube Music翻译歌词响应, argument = 
-http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube Music翻译歌词响应, argument = 
+http-request ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, tag = JSON·YouTube Music浏览请求, argument = 
+http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube Music浏览请求, argument = 
+http-response ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js, requires-body = true, tag = JSON·YouTube Music翻译歌词响应, argument = 
+http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube Music翻译歌词响应, argument = 
 
 [MitM]
 hostname = www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, youtubei.googleapis.com, -redirector*.googlevideo.com, *.googlevideo.com
