@@ -394,6 +394,22 @@
     <td>096</td>
     <td><a href="https://raw.githubusercontent.com/pxx917144686/Loon/main/Tool/Loon/Plugin/SeasunJX3_remove_ads.plugin">剑网三无界去广告</a></td>
   </tr>
+  <tr>
+    <td>097</td>
+    <td><a href="https://raw.githubusercontent.com/pxx917144686/Loon/main/Tool/Loon/Plugin/Keep_remove_ads.plugin">Keep去广告</a></td>
+  </tr>
+  <tr>
+    <td>098</td>
+    <td><a href="https://www.nsloon.com/openloon/import?plugin=https://raw.githubusercontent.com/pxx917144686/Loon/main/Tool/Loon/Plugin/123NetWorkDisk_remove_ads.plugin">123云盘去广告</a></td>
+  </tr>
+  <tr>
+    <td>099</td>
+    <td><a href="https://www.nsloon.com/openloon/import?plugin=https://raw.githubusercontent.com/pxx917144686/Loon/main/Tool/Loon/Plugin/YoudaoTrans_remove_ads.plugin">有道翻译官去广告</a></td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td><a href="https://www.nsloon.com/openloon/import?plugin=https://raw.githubusercontent.com/pxx917144686/Loon/main/Tool/Loon/Plugin/MeituMYXJ_remove_ads.plugin">美颜相机去广告</a></td>
+  </tr>
     <td></td>
     <td></td>
     <td></td>
@@ -525,5 +541,9 @@
   <tr>
     <td>25</td>
     <td><a href="https://raw.githubusercontent.com/pxx917144686/Loon/main/Tool/Loon/Plugin/UnnooQuan_remove_watermark.plugin">知识星球去水印</a></td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td><a href="https://raw.githubusercontent.com/pxx917144686/Loon/main/Tool/Loon/Plugin/AppleWeatherEnhancer.plugin">Apple天气增强</a></td>
   </tr>
 </table>
