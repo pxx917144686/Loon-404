@@ -4,7 +4,7 @@
   <tr>
     <th>类别</th>
     <th>序号</th>
-    <th>名称</th>
+    <th>链接</th>
   </tr>
   <tr>
     <td rowspan="129"><strong>去广告插件</strong></td>
