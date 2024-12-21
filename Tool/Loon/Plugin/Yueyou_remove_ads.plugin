@@ -1,17 +1,18 @@
-# 原链接 : https://kelee.one/Tool/Loon/Plugin/XunLei_remove_ads.plugin
-#!name=迅雷去广告
-#!desc=移除开屏广告、首页横幅广告，精简我的页面。
-#App链接=https://apps.apple.com/app/id1503466530
+# 原链接 : https://kelee.one/Tool/Loon/Plugin/Yueyou_remove_ads.plugin
+#!name=阅友去广告
+#!desc=移除开屏广告、弹窗广告和阅读页面广告，移除底栏福利按钮。
+#App链接=https://apps.apple.com/app/id1066723192
 #!author=可莉🅥[https://github.com/Moli-X/Tool/blob/X/Loon/Readme.md]
 #!tag=去广告
 #!system=
 #!system_version=
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/Moli-X/Tool/raw/X/Loon/Plugin/Kelee/XunLei_remove_ads.plugin
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XunLei.png
+#!homepage=https://github.com/Moli-X/Tool/raw/X/Loon/Plugin/Kelee/Yueyou_remove_ads.plugin
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Yueyou.png
 #!date=2024-11-28 00:00:00
 
 [Rule]
+DOMAIN,ads.reader.yueyouxs.com,REJECT
 AND,((DOMAIN-KEYWORD,-ad-),(DOMAIN-SUFFIX,byteimg.com)),REJECT
 AND,((DOMAIN-KEYWORD,-ttam-),(DOMAIN-SUFFIX,ibyteimg.com)),REJECT
 AND,((DOMAIN-KEYWORD,ssdk-),(DOMAIN-SUFFIX,pangle.io)),REJECT
@@ -60,37 +61,36 @@ DOMAIN-KEYWORD,log-api.pangolin-sdk-toutiao,REJECT
 DOMAIN-KEYWORD,-ad.byteoversea.com,REJECT
 DOMAIN-KEYWORD,video-cn.snssdk.com,REJECT
 DOMAIN-KEYWORD,asiad.byteactivity,REJECT
-DOMAIN,adapi.izuiyou.com,REJECT
-URL-REGEX,"^http:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/",REJECT-DICT
-DOMAIN,e-u1.ubixioe.com,REJECT
-DOMAIN,sdk-data.ubixioe.com,REJECT
-DOMAIN,tower.ubixioe.com,REJECT
-DOMAIN,tx-cfg-u1.ubixioe.com,REJECT
-DOMAIN,tx-data-u1.ubixioe.com,REJECT
+DOMAIN,als.baidu.com,REJECT
+DOMAIN,bgg.baidu.com,REJECT
+DOMAIN,cpro.baidustatic.com,REJECT
+DOMAIN,feed-image.baidu.com,REJECT
+DOMAIN,click-bes.baidu.com,REJECT
+DOMAIN,eclick.baidu.com,REJECT
+DOMAIN,mobads-logs.baidu.com,REJECT
+DOMAIN,mobads-pre-config.cdn.bcebos.com,REJECT
+DOMAIN,mobads.baidu.com,REJECT
+DOMAIN,nadvideo2.baidu.com,REJECT
+DOMAIN,wn.pos.baidu.com,REJECT
+DOMAIN,miniapp-ad.cdn.bcebos.com,REJECT
+DOMAIN-SUFFIX,union.baidu.cn,REJECT
+DOMAIN-SUFFIX,union.baidu.com,REJECT
 DOMAIN,cnlogs.umeng.com,REJECT
 DOMAIN,errlog.umeng.com,REJECT
 DOMAIN,errnewlog.umeng.com,REJECT
 DOMAIN,ucc.umeng.com,REJECT
 DOMAIN,ulogs.umeng.com,REJECT
 DOMAIN,utoken.umeng.com,REJECT
-DOMAIN,gdfp.gifshow.com,REJECT
-DOMAIN,open.e.kuaishou.com,REJECT
-DOMAIN-SUFFIX,adukwai.com,REJECT
-DOMAIN,ios.bugly.qq.com,REJECT
-DOMAIN,sdk.e.qq.com,REJECT
-DOMAIN-SUFFIX,ugdtimg.com,REJECT
-DOMAIN-SUFFIX,gdtimg.com,REJECT
-DOMAIN-SUFFIX,gdt.qq.com,REJECT
-DOMAIN,dsp-x.jd.com,REJECT
-DOMAIN,xlog.jd.com,REJECT
-DOMAIN,janapi.jd.com,REJECT
-DOMAIN,et.tanx.com,REJECT
+DOMAIN,deeplink.umeng.com,REJECT
+DOMAIN,aspect-upush.umeng.com,REJECT
+DOMAIN,plbslog.umeng.com,REJECT
+DOMAIN,log.umtrack.com,REJECT
+DOMAIN,aaid.umeng.com,REJECT
+DOMAIN,log.umsns.com,REJECT
 
 [Rewrite]
-^https:\/\/api-shoulei-ssl\.xunlei\.com\/flowhub\/v1\/slots:batchGet$ reject-dict
-
-[Script]
-http-response ^https:\/\/conf-m-ssl\.xunlei\.com\/external\/ script-path=https://github.com/Moli-X/Tool/raw/X/Loon/Plugin/Kelee/Script/XunLei_remove_ads.js,requires-body=true,tag=精简我的页面
+^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? response-body-json-del data.isShowDLPopup data.isShowGame data.touTiaoShowDlPopup data.offLineDownload.WatchVideoBtnDesc data.readVipFirstCfg data.readVipNormalCfg data.notifyAd data.hotStartSplashTime data.hotStartReqSwitch data.isShowBFTab data.popReqDelayTime data.benefitCfg data.chestTask data.hotStartAd data.activeTagList data.secondOrderCfg data.secondOrderList data.blockedWordsCfg data.aaReportListCfg data.pddAdSwitch data.isShowShelfAuthPopup data.firstPopUpAmount
+^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? response-body-json-replace data.isAdClosed true 
 
 [MitM]
-hostname=api-shoulei-ssl.xunlei.com,conf-m-ssl.xunlei.com
+hostname=goway.reader.yueyouxs.com
