@@ -1,40 +1,31 @@
-#!name = 网易大神去广告
-#!desc = 移除开屏广告、底栏游戏入口、精简我的页面。
-#!openUrl = https://apps.apple.com/app/id1359055423
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(745)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/NetEaseGodlike.png
-#!date = 2024-08-11 23:14:59
+# 原链接 : https://kelee.one/Tool/Loon/Plugin/NetEaseGodlike_remove_ads.plugin
+#!name=网易大神去广告
+#!desc=移除开屏广告，精简我的页面。
+#App链接=https://apps.apple.com/app/id1359055423
+#!author=可莉🅥[https://github.com/Moli-X/Tool/blob/X/Loon/Readme.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/Moli-X/Tool/raw/X/Loon/Plugin/Kelee/NetEaseGodlike_remove_ads.plugin
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/NetEaseGodlike.png
+#!date=2024-12-04 15:48:23
 
 [Rule]
-# 拦截HTTPDNS
-DOMAIN, httpdns.music.163.com, REJECT
-DOMAIN, httpdns.n.netease.com, REJECT
-DOMAIN, httpdns-sdk.n.netease.com, REJECT
-DOMAIN, httpdns.yunxindns.com, REJECT
-DOMAIN, lofter.httpdns.c.163.com, REJECT
-DOMAIN, music.httpdns.c.163.com, REJECT
-IP-CIDR, 59.111.239.61/32, REJECT, no-resolve
-IP-CIDR, 59.111.239.62/32, REJECT, no-resolve
-IP-CIDR, 115.236.121.51/32, REJECT, no-resolve
-IP-CIDR, 115.236.121.195/32, REJECT, no-resolve
+DOMAIN,httpdns.music.163.com,REJECT
+DOMAIN,httpdns.n.netease.com,REJECT
+DOMAIN,httpdns-sdk.n.netease.com,REJECT
+DOMAIN,httpdns.yunxindns.com,REJECT
+DOMAIN,lofter.httpdns.c.163.com,REJECT
+DOMAIN,music.httpdns.c.163.com,REJECT
+IP-CIDR,59.111.239.61/32,REJECT,no-resolve
+IP-CIDR,59.111.239.62/32,REJECT,no-resolve
+IP-CIDR,115.236.121.51/32,REJECT,no-resolve
+IP-CIDR,115.236.121.195/32,REJECT,no-resolve
 
 [Rewrite]
-# 广告下发
 ^https:\/\/god\.gameyw\.netease\.com\/v\d\/ad reject
-
-# 我的页面 - 横幅广告、为你推荐、更多会员权益、精选活动
-^https:\/\/god\.gameyw\.netease\.com\/v\d\/app\/static\/conf\/getByModuleNameList$ reject-dict
-
-# 发现页面即游戏页面
-^https:\/\/god\.gameyw\.netease\.com\/v1\/app\/square\/(facade|list\/v\d) response-body-json-del result
-
-# 底栏游戏入口
-^https:\/\/app-conf\.ds\.163\.com\/v\d\/app\/base\/conf\/static\/start-config response-body-json-del result.updateConfig[1].itemList[93].itemList[2]
+^https:\/\/app-conf\.ds\.163\.com\/v1\/app\/base\/conf\/static\/start-config\? response-body-replace-regex \{"os":"all","weight":50\.0,"hidden":false,"name":"游戏"\},\{"os":"all","weight":50\.0,"hidden":false,"name":"频道"\}, null
 
 [MitM]
-hostname = god.gameyw.netease.com, app-conf.ds.163.com
+hostname=god.gameyw.netease.com,app-conf.ds.163.com

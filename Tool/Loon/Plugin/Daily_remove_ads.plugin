@@ -1,17 +1,18 @@
-#!name = 推栏去广告
-#!desc = 过滤推栏广告
-#!openUrl = https://apps.apple.com/app/id1352849256
-#!author = Keywos[https://github.com/Keywos], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(745)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Daily.png
-#!date = 2023-09-08 13:48:55
+# 原链接 : https://kelee.one/Tool/Loon/Plugin/Daily_remove_ads.plugin
+#!name=推栏去广告
+#!desc=过滤推栏广告
+#App链接=https://apps.apple.com/app/id1352849256
+#!author=可莉🅥[https://github.com/Moli-X/Tool/blob/X/Loon/Readme.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/Moli-X/Tool/raw/X/Loon/Plugin/Kelee/Daily_remove_ads.plugin
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Daily.png
+#!date=2024-12-04 11:02:01
 
-[Script]
-http-response ^https?:\/\/m\.pvp\.xoyo\.com\/conf\/server-mapping script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/Daily/Daily_remove_ads.js, requires-body = true, tag = 移除开屏广告
+[Rewrite]
+^https?:\/\/m\.pvp\.xoyo\.com\/conf\/server-mapping$ response-body-json-del data.splashConf data.splashConfNew
 
 [MitM]
-hostname = m.pvp.xoyo.com
+hostname=m.pvp.xoyo.com

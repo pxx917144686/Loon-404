@@ -1,50 +1,33 @@
-#!name = 配音秀去广告
-#!desc = 移除开屏广告、弹窗、横幅、各类关注推荐。
-#!openUrl = https://apps.apple.com/app/id746925035
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(745)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DubbingShow.png
-#!date = 2024-08-28 08:53:44
+# 原链接 : https://kelee.one/Tool/Loon/Plugin/DubbingShow_remove_ads.plugin
+#!name=配音秀去广告
+#!desc=移除开屏广告、弹窗、横幅、各类关注推荐。
+#App链接=https://apps.apple.com/app/id746925035
+#!author=可莉🅥[https://github.com/Moli-X/Tool/blob/X/Loon/Readme.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/Moli-X/Tool/raw/X/Loon/Plugin/Kelee/DubbingShow_remove_ads.plugin
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DubbingShow.png
+#!date=2024-11-28 00:00:00
 
 [Rule]
-# 腾讯优量汇 - 广告服务商
-DOMAIN, ios.bugly.qq.com, REJECT
-DOMAIN, sdk.e.qq.com, REJECT
-DOMAIN, us.l.qq.com, REJECT
-DOMAIN-SUFFIX, ugdtimg.com, REJECT
-# DOMAIN, adsmind.ugdtimg.com, REJECT
-# DOMAIN, pgdt.ugdtimg.com, REJECT
-# DOMAIN, qzs.gdtimg.com, REJECT
-
-DOMAIN-SUFFIX, gdt.qq.com, REJECT
-# DOMAIN, mi.gdt.qq.com, REJECT
-# DOMAIN, win.gdt.qq.com, REJECT
-# DOMAIN, v2.gdt.qq.com, REJECT
-# v.gdt.qq.com, REJECT
-# t.gdt.qq.com, REJECT
-# c2.gdt.qq.com, REJECT
-DOMAIN, tmeadcomm.y.qq.com, REJECT
+DOMAIN,ios.bugly.qq.com,REJECT
+DOMAIN,sdk.e.qq.com,REJECT
+DOMAIN,us.l.qq.com,REJECT
+DOMAIN-SUFFIX,ugdtimg.com,REJECT
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+DOMAIN,tmeadcomm.y.qq.com,REJECT
 
 [Rewrite]
 首页 - 推荐 - 语聊横幅
 ^https:\/\/iosapi\.peiyinxiu\.com\/Api\/live\/LiveList response-body-json-del data.banners
-
-# 首页 - 推荐 - 语聊关注推荐
 ^https:\/\/iosapi\.peiyinxiu\.com\/api\/live\/FollowList response-body-json-del obj.data
-
-# 首页 - 关注推荐
 ^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Friend\/GetRecommendUsers response-body-json-del obj.data
-
-# 消息 - 群聊推荐
 ^https:\/\/iosapi\.peiyinxiu\.com\/api\/Union\/HomeData response-body-json-del obj.data
 
 [Script]
-# 首页 - 底部弹窗
-http-response ^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Film\/GetConfigValue script-path = https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DubbingShow/DubbingShow_remove_ads.js, requires-body = true, tag = 移除首页底部弹窗
+http-response ^https:\/\/iosapi\.peiyinxiu\.com\/Api\/Film\/GetConfigValue script-path=https://github.com/Moli-X/Tool/raw/X/Loon/Plugin/Kelee/Script/DubbingShow_remove_ads.js,requires-body=true,tag=移除首页底部弹窗
 
 [MitM]
-hostname = iosapi.peiyinxiu.com
+hostname=iosapi.peiyinxiu.com

@@ -1,36 +1,23 @@
-#!name = 随手记去广告
-#!desc = 移除开屏广告、神象云账本内部广告、我的页面广告，移除社区入口。
-#!openUrl = https://apps.apple.com/app/id372353614
-#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag = 去广告
-#!system = 
-#!system_version = 
-#!loon_version = 3.2.1(745)
-#!homepage = https://github.com/luestr/ProxyResource/blob/main/README.md
-#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KingdeeMyMoney.png
-#!date = 2024-07-12 02:09:16
+# 原链接 : https://kelee.one/Tool/Loon/Plugin/KingdeeMyMoney_remove_ads.plugin
+#!name=随手记去广告
+#!desc=移除开屏广告、神象云账本内部广告、我的页面广告，移除社区入口。
+#App链接=https://apps.apple.com/app/id372353614
+#!author=可莉🅥[https://github.com/Moli-X/Tool/blob/X/Loon/Readme.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/Moli-X/Tool/raw/X/Loon/Plugin/Kelee/KingdeeMyMoney_remove_ads.plugin
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/KingdeeMyMoney.png
+#!date=2024-11-28 00:00:00
 
 [Rewrite]
-# 开屏广告
 ^https:\/\/tg\.feidee\.com\/online_ad\/api\/search\.do$ reject-dict
-
-# 首页 - 为您推荐
 ^https:\/\/yunmk\.feidee\.net\/cab-market-ws\/market\/v2\/contents$ reject-dict
-
-# 神象云账本 - 推广通知横幅
 ^https:\/\/tg\.feidee\.com\/vis-ad-engine-ws\/api\/v2\/ads\/.+esultNum reject-dict
-
-# 神象云账本 - 顶部服务、客服入口
-# https://yun.feidee.net/cab-query-ws/v1/comet/artifact/store?path=/cul/screen/Home&ca=897293034467459072
-
-# 社区入口
 ^https:\/\/api\.feidee\.net\/v1\/configs\/client\/configs reject
-
-# 其他广告 - 暂无有效广告数据
 ^https:\/\/tg\.feidee\.com\/vis-ad-engine-ws\/api\/show reject-dict
-
-# 我的页面 - 免广告会员
 ^https:\/\/yun\.feidee\.net\/cab-periodic-activity-ws\/terminal\/v1\/members\/status reject-dict
 
 [MitM]
-hostname = tg.feidee.com, yunmk.feidee.net, community.feidee.com, api.feidee.net, yun.feidee.net
+hostname=tg.feidee.com,yunmk.feidee.net,community.feidee.com,api.feidee.net,yun.feidee.net
